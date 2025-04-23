@@ -7,7 +7,11 @@ def main():
 
 if __name__ == "__main__":
     main()
-    print(torch.__version__)
-    print(torch.backends.mps.is_available())
-    print(torch.backends.mps.is_built())
-    print(torch.cuda.is_available())
+    print(f"PyTorch Version: {torch.__version__}")
+    print(f"CUDA Available (NVIDIA GPU): {torch.cuda.is_available()}")
+
+    if torch.cuda.is_available():
+        print(f"CUDA Device Count: {torch.cuda.device_count()}")
+        print(f"CUDA Device Name: {torch.cuda.get_device_name(0)}")
+    else:
+        print("CUDA not found by PyTorch.")
