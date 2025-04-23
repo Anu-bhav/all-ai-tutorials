@@ -106,3 +106,36 @@ This notebook is part of a tutorial series based on the PyTorch Tutorials - Comp
 3.  Run the cells sequentially to understand how PyTorch tracks operations and computes gradients automatically.
 
 This notebook provides essential knowledge for understanding the mechanics behind training models in PyTorch.
+
+# PyTorch Tutorial: Backpropagation Explained
+
+This Jupyter Notebook (`Backpropagation.ipynb`) provides a conceptual overview and a practical, simplified demonstration of the **backpropagation** algorithm using PyTorch. It illustrates how gradients are calculated with respect to model parameters (weights) and how these gradients are used to update the parameters to minimize a loss function.
+
+This notebook builds upon the concepts introduced in `Gradient Calculation With Autograd.ipynb`.
+
+## Key Concepts Covered:
+
+1.  **Conceptual Foundation:**
+
+    - **Chain Rule:** The mathematical foundation for calculating gradients through nested functions.
+    - **Computational Graph:** Visualizing the sequence of operations and dependencies for gradient calculation.
+    - **Three Key Steps:**
+      1.  **Forward Pass:** Compute the model's output and the loss.
+      2.  **Compute Local Gradients:** (Handled automatically by Autograd).
+      3.  **Backward Pass:** Compute the gradient of the loss with respect to the weights using the chain rule.
+
+2.  **Practical Implementation (Simplified):**
+    - **Setting up Tensors:** Defining input (`x`), target (`y`), and weight (`w`) tensors. Crucially, setting `requires_grad=True` for the weight tensor (`w`) to track operations and enable gradient calculation for it.
+    - **Forward Pass:** Performing calculations to get the model's prediction (`y_hat`) and computing the loss (e.g., Mean Squared Error: `(y_hat - y)**2`).
+    - **Backward Pass (`loss.backward()`):** Initiating the backpropagation process. PyTorch's Autograd engine calculates the gradients (e.g., `dLoss/dw`) automatically based on the recorded computation graph.
+    - **Accessing Gradients:** Retrieving the computed gradient for the weight using `w.grad`.
+    - **Manual Weight Update:** Implementing a basic gradient descent step: `weight = weight - learning_rate * gradient`. This is done within a `torch.no_grad()` block to prevent this update step from being tracked in the computation graph.
+    - **Zeroing Gradients (`w.grad.zero_()`):** Resetting the gradients after updating the weights. This is essential because gradients accumulate by default on subsequent `.backward()` calls.
+
+## How to Use:
+
+1.  Ensure you have PyTorch installed (`pip install torch`).
+2.  Open `Backpropagation.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
+3.  Run the cells sequentially to follow the conceptual explanation and the step-by-step implementation of a single backpropagation and weight update cycle.
+
+This notebook provides a foundational understanding of how automatic differentiation (Autograd) is used to implement the backpropagation algorithm, which is the core mechanism for training most neural networks. While this example uses manual weight updates, in practice, PyTorch's `torch.optim` module provides optimized algorithms for this step.
