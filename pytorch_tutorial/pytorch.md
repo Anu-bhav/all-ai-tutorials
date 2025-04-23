@@ -2,7 +2,7 @@
 
 Tutorial is based on this youtube playlist [PyTorch Tutorials - Complete Beginner](https://www.youtube.com/playlist?list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4)
 
-# PyTorch Tutorial: 1. [Tensor Basics](./Tensor%20Basics.ipynb)
+# PyTorch Tutorial: [Tensor Basics](./Tensor%20Basics.ipynb)
 
 This Jupyter Notebook (`Tensor Basics.ipynb`) serves as an introduction to the fundamental building block of PyTorch: the **Tensor**. It covers the creation, manipulation, and basic operations associated with PyTorch tensors.
 
@@ -61,3 +61,48 @@ This notebook is part of a tutorial series based on the PyTorch Tutorials - Comp
 4.  Run the cells sequentially to understand each concept.
 
 This notebook provides a solid foundation for working with tensors, which is essential for any further work in PyTorch.
+
+# PyTorch Tutorial: [Gradient Calculation With Autograd](./Gradient%20Calculation%20With%20Autograd.ipynb)
+
+This Jupyter Notebook (`Gradient Calculation With Autograd.ipynb`) explains and demonstrates PyTorch's automatic differentiation package: **Autograd**. Understanding Autograd is crucial for training neural networks as it handles the computation of gradients (backpropagation) automatically.
+
+This notebook is part of a tutorial series based on the PyTorch Tutorials - Complete Beginner YouTube playlist.
+
+## Key Concepts Covered:
+
+1.  **`requires_grad` Attribute:**
+
+    - How to create tensors that track computational history for gradient calculation (`requires_grad=True`).
+    - Understanding that operations involving tensors with `requires_grad=True` build a computation graph.
+
+2.  **Computation Graph:**
+
+    - A brief conceptual overview of how PyTorch dynamically builds a graph representing the operations performed on tensors.
+    - Identifying leaf nodes and intermediate nodes.
+
+3.  **Gradient Calculation with `backward()`:**
+
+    - Using the `.backward()` method on a scalar output (e.g., loss) to trigger gradient computation throughout the graph.
+    - Understanding that `backward()` computes gradients using the chain rule.
+    - The requirement for the output tensor to be scalar or providing a `gradient` argument to `backward()` for non-scalar outputs.
+
+4.  **Accessing Gradients:**
+
+    - How computed gradients are accumulated in the `.grad` attribute of the leaf tensors that had `requires_grad=True`.
+
+5.  **Disabling Gradient Tracking:**
+
+    - Using `torch.no_grad()` context manager: Ideal for inference or code blocks where gradients are not needed, saving memory and computation.
+    - Using `.detach()`: Creates a new tensor that shares the same data but is detached from the computation history, preventing gradients from flowing back through it.
+
+6.  **Gradient Accumulation and Zeroing:**
+    - Understanding that gradients accumulate by default when `backward()` is called multiple times.
+    - The necessity of zeroing gradients (e.g., using `optimizer.zero_grad()` or `tensor.grad.zero_()`) before each optimization step in a typical training loop.
+
+## How to Use:
+
+1.  Ensure you have PyTorch installed (`pip install torch`).
+2.  Open `Gradient Calculation With Autograd.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
+3.  Run the cells sequentially to understand how PyTorch tracks operations and computes gradients automatically.
+
+This notebook provides essential knowledge for understanding the mechanics behind training models in PyTorch.
