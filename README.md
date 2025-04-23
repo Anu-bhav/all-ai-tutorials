@@ -5,5 +5,5 @@ All my AI related tutorials for different libraries like pytorch, scikit learn a
 ```bash
 uv init .
 uv venv .venv
-UV_TORCH_BACKEND=auto uv pip install torch
+uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 ```
