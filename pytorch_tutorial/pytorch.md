@@ -107,7 +107,7 @@ This notebook is part of a tutorial series based on the PyTorch Tutorials - Comp
 
 This notebook provides essential knowledge for understanding the mechanics behind training models in PyTorch.
 
-# PyTorch Tutorial: Backpropagation Explained
+# PyTorch Tutorial: [Backpropagation Explained](./Backpropagation.ipynb)
 
 This Jupyter Notebook (`Backpropagation.ipynb`) provides a conceptual overview and a practical, simplified demonstration of the **backpropagation** algorithm using PyTorch. It illustrates how gradients are calculated with respect to model parameters (weights) and how these gradients are used to update the parameters to minimize a loss function.
 
