@@ -2,6 +2,8 @@
 
 All my AI related tutorials for different libraries like pytorch, scikit learn and others
 
+## Setting up environment
+
 ```bash
 uv init .
 uv venv .venv
