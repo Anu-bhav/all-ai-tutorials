@@ -139,3 +139,42 @@ This notebook builds upon the concepts introduced in `Gradient Calculation With 
 3.  Run the cells sequentially to follow the conceptual explanation and the step-by-step implementation of a single backpropagation and weight update cycle.
 
 This notebook provides a foundational understanding of how automatic differentiation (Autograd) is used to implement the backpropagation algorithm, which is the core mechanism for training most neural networks. While this example uses manual weight updates, in practice, PyTorch's `torch.optim` module provides optimized algorithms for this step.
+
+# PyTorch Tutorial: [Gradient Descent with Autograd and Backpropagation](./Gradient%20Descent%20with%20Autograd%20and%20Backpropagation.ipynb)
+
+This Jupyter Notebook (`Gradient Descent with Autograd and Backpropagation.ipynb`) provides a practical demonstration of training a simple linear regression model using gradient descent. It serves two main purposes:
+
+1.  Illustrates the complete process manually using **NumPy**, including:
+    - Forward pass (prediction)
+    - Loss calculation (Mean Squared Error - MSE)
+    - Manual gradient computation
+    - Weight update step
+2.  Replicates the same process using **PyTorch**, highlighting the power of **Autograd** for automatic gradient calculation (backpropagation).
+
+This notebook effectively contrasts the manual approach with PyTorch's automated capabilities, building upon concepts from `Tensor Basics.ipynb`, `Gradient Calculation With Autograd.ipynb`, and `Backpropagation.ipynb`.
+
+## Key Concepts Covered:
+
+1.  **Linear Regression Model:** Implementing a simple model `y = w * x`.
+2.  **Loss Function:** Using Mean Squared Error (MSE) to quantify the difference between predictions and actual values.
+3.  **Gradient Descent:** The iterative optimization algorithm used to minimize the loss by updating model parameters (weights).
+4.  **Manual Implementation (NumPy):**
+    - Defining model (`forward`), loss (`loss`), and gradient (`gradient`) functions explicitly.
+    - Implementing the training loop with manual calculations for prediction, loss, gradient, and weight updates.
+5.  **PyTorch Implementation:**
+    - Setting up data and weights as PyTorch tensors.
+    - Crucially, setting `requires_grad=True` on the weight tensor to enable gradient tracking.
+    - Defining model (`forward`) and loss (`loss`) functions using PyTorch operations.
+    - **Automatic Gradient Calculation:** Using `loss.backward()` to automatically compute gradients (dLoss/dw) via Autograd and backpropagation. No manual gradient function is needed.
+    - **Accessing Gradients:** Using `w.grad` to retrieve the computed gradient.
+    - **Weight Update:** Performing the update step `w -= learning_rate * w.grad` within a `torch.no_grad()` block to prevent tracking this operation in the computation graph.
+    - **Zeroing Gradients:** Using `w.grad.zero_()` after each update to reset gradients for the next iteration, preventing accumulation.
+6.  **Comparison:** Implicitly shows the simplification and efficiency gained by using PyTorch's Autograd compared to manual gradient derivation and implementation.
+
+## How to Use:
+
+1.  Ensure you have PyTorch and NumPy installed (`pip install torch numpy`).
+2.  Open `Gradient Descent with Autograd and Backpropagation.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
+3.  Run the cells sequentially. First, observe the manual NumPy implementation, then see how the same result is achieved more easily with PyTorch and Autograd.
+
+This notebook provides a concrete example of a basic machine learning training loop and clearly demonstrates the practical advantage of using automatic differentiation frameworks like PyTorch.
