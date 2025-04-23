@@ -3,10 +3,6 @@ import torch
 
 def main():
     print("Hello from all-ai-tutorials!")
-
-
-if __name__ == "__main__":
-    main()
     print(f"PyTorch Version: {torch.__version__}")
     print(f"CUDA Available (NVIDIA GPU): {torch.cuda.is_available()}")
 
@@ -15,3 +11,7 @@ if __name__ == "__main__":
         print(f"CUDA Device Name: {torch.cuda.get_device_name(0)}")
     else:
         print("CUDA not found by PyTorch.")
+
+
+if __name__ == "__main__":
+    main()
