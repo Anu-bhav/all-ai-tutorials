@@ -178,3 +178,41 @@ This notebook effectively contrasts the manual approach with PyTorch's automated
 3.  Run the cells sequentially. First, observe the manual NumPy implementation, then see how the same result is achieved more easily with PyTorch and Autograd.
 
 This notebook provides a concrete example of a basic machine learning training loop and clearly demonstrates the practical advantage of using automatic differentiation frameworks like PyTorch.
+
+# PyTorch Tutorial: [Training Pipeline - Model, Loss, and Optimizer](./Training%20Pipeline%20-%20Model,%20Loss,%20and%20Optimizer.ipynb)
+
+This Jupyter Notebook (`Training Pipeline - Model, Loss, and Optimizer.ipynb`) demonstrates the standard PyTorch training pipeline by building and training a simple linear regression model. It introduces key PyTorch components for streamlining the model training process:
+
+1.  **`torch.nn.Module`**: For defining model architectures.
+2.  **`torch.nn.Loss`**: For defining loss functions (e.g., `nn.MSELoss`).
+3.  **`torch.optim`**: For defining optimization algorithms (e.g., `SGD`, `Adam`).
+
+This notebook builds upon the concepts from previous tutorials, particularly `Gradient Descent with Autograd and Backpropagation.ipynb`, showing how PyTorch's higher-level abstractions simplify the training loop.
+
+## Key Concepts Covered:
+
+1.  **Standard Training Pipeline Steps:** Outlines the typical workflow for training a model in PyTorch.
+2.  **Using `nn.MSELoss`:** Demonstrates how to use PyTorch's built-in Mean Squared Error loss function instead of calculating it manually.
+3.  **Using `torch.optim`:**
+    - Shows how to use optimizers like `torch.optim.SGD` and `torch.optim.Adam`.
+    - Explains passing model parameters (`w` or `model.parameters()`) to the optimizer.
+    - Illustrates using `optimizer.step()` to update weights based on computed gradients.
+    - Highlights the importance of `optimizer.zero_grad()` to clear gradients before the next iteration's backward pass.
+4.  **Data Reshaping:** Shows the necessity of reshaping input/output tensors (e.g., from `[N]` to `[N, 1]`) to match the expected input dimensions of `nn.Linear` layers.
+5.  **Defining a Model with `nn.Module`:**
+    - Introduces `torch.nn.Linear` as a predefined layer for linear transformations (`y = Wx + b`).
+    - Shows how to instantiate a simple linear model.
+6.  **Integrated Training Loop:** Combines the model definition (`nn.Linear`), loss function (`nn.MSELoss`), and optimizer (`torch.optim.Adam`) into a concise and standard PyTorch training loop.
+7.  **Model Parameters:** Accessing and printing model weights and biases using `model.parameters()`.
+8.  **Inference:** Making predictions using the trained model (`model(x_test)`).
+
+## How to Use:
+
+1.  Ensure you have PyTorch installed (`pip install torch`).
+2.  Open `Training Pipeline - Model, Loss, and Optimizer.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
+3.  Run the cells sequentially. Pay attention to:
+    - The initial example using a single weight tensor `w` with `nn.MSELoss` and `torch.optim.SGD`.
+    - The transition to using `nn.Linear` for the model definition.
+    - The final training loop using `nn.Linear`, `nn.MSELoss`, and `torch.optim.Adam`.
+
+This notebook bridges the gap between manual gradient descent implementations and the standard, more efficient way of building and training models using PyTorch's core `nn` and `optim` modules.
