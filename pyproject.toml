@@ -12,3 +12,7 @@ dependencies = [
 dev = [
     "ruff>=0.11.6",
 ]
+
+[tool.ruff]
+# Enable basic checks and import sorting
+lint.select = ["E", "F", "I"]  # Added "I" for import sorting
