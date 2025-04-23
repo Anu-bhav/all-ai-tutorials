@@ -2,9 +2,9 @@
 
 Tutorial is based on this youtube playlist [PyTorch Tutorials - Complete Beginner](https://www.youtube.com/playlist?list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4)
 
-# PyTorch Tutorial: [Tensor Basics](./Tensor%20Basics.ipynb)
+# PyTorch Tutorial: [Tensor Basics](./tensor_basics.ipynb)
 
-This Jupyter Notebook (`Tensor Basics.ipynb`) serves as an introduction to the fundamental building block of PyTorch: the **Tensor**. It covers the creation, manipulation, and basic operations associated with PyTorch tensors.
+This Jupyter Notebook (`tensor_basics.ipynb`) serves as an introduction to the fundamental building block of PyTorch: the **Tensor**. It covers the creation, manipulation, and basic operations associated with PyTorch tensors.
 
 This notebook is part of a tutorial series based on the PyTorch Tutorials - Complete Beginner YouTube playlist.
 
@@ -57,14 +57,14 @@ This notebook is part of a tutorial series based on the PyTorch Tutorials - Comp
 
 1.  Ensure you have PyTorch and NumPy installed (`pip install torch numpy`).
 2.  If you have an NVIDIA GPU, ensure CUDA drivers and the correct PyTorch version with CUDA support are installed.
-3.  Open `Tensor Basics.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
+3.  Open `tensor_basics.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
 4.  Run the cells sequentially to understand each concept.
 
 This notebook provides a solid foundation for working with tensors, which is essential for any further work in PyTorch.
 
-# PyTorch Tutorial: [Gradient Calculation With Autograd](./Gradient%20Calculation%20With%20Autograd.ipynb)
+# PyTorch Tutorial: [Gradient Calculation With Autograd](./gradient_calculation_with_autograd.ipynb)
 
-This Jupyter Notebook (`Gradient Calculation With Autograd.ipynb`) explains and demonstrates PyTorch's automatic differentiation package: **Autograd**. Understanding Autograd is crucial for training neural networks as it handles the computation of gradients (backpropagation) automatically.
+This Jupyter Notebook (`gradient_calculation_with_autograd.ipynb`) explains and demonstrates PyTorch's automatic differentiation package: **Autograd**. Understanding Autograd is crucial for training neural networks as it handles the computation of gradients (backpropagation) automatically.
 
 This notebook is part of a tutorial series based on the PyTorch Tutorials - Complete Beginner YouTube playlist.
 
@@ -102,16 +102,16 @@ This notebook is part of a tutorial series based on the PyTorch Tutorials - Comp
 ## How to Use:
 
 1.  Ensure you have PyTorch installed (`pip install torch`).
-2.  Open `Gradient Calculation With Autograd.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
+2.  Open `gradient_calculation_with_autograd.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
 3.  Run the cells sequentially to understand how PyTorch tracks operations and computes gradients automatically.
 
 This notebook provides essential knowledge for understanding the mechanics behind training models in PyTorch.
 
-# PyTorch Tutorial: [Backpropagation Explained](./Backpropagation.ipynb)
+# PyTorch Tutorial: [Backpropagation Explained](./backpropagation.ipynb)
 
-This Jupyter Notebook (`Backpropagation.ipynb`) provides a conceptual overview and a practical, simplified demonstration of the **backpropagation** algorithm using PyTorch. It illustrates how gradients are calculated with respect to model parameters (weights) and how these gradients are used to update the parameters to minimize a loss function.
+This Jupyter Notebook (`backpropagation.ipynb`) provides a conceptual overview and a practical, simplified demonstration of the **backpropagation** algorithm using PyTorch. It illustrates how gradients are calculated with respect to model parameters (weights) and how these gradients are used to update the parameters to minimize a loss function.
 
-This notebook builds upon the concepts introduced in `Gradient Calculation With Autograd.ipynb`.
+This notebook builds upon the concepts introduced in `gradient_calculation_with_autograd.ipynb`.
 
 ## Key Concepts Covered:
 
@@ -135,14 +135,14 @@ This notebook builds upon the concepts introduced in `Gradient Calculation With 
 ## How to Use:
 
 1.  Ensure you have PyTorch installed (`pip install torch`).
-2.  Open `Backpropagation.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
+2.  Open `backpropagation.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
 3.  Run the cells sequentially to follow the conceptual explanation and the step-by-step implementation of a single backpropagation and weight update cycle.
 
 This notebook provides a foundational understanding of how automatic differentiation (Autograd) is used to implement the backpropagation algorithm, which is the core mechanism for training most neural networks. While this example uses manual weight updates, in practice, PyTorch's `torch.optim` module provides optimized algorithms for this step.
 
-# PyTorch Tutorial: [Gradient Descent with Autograd and Backpropagation](./Gradient%20Descent%20with%20Autograd%20and%20Backpropagation.ipynb)
+# PyTorch Tutorial: [Gradient Descent with Autograd and Backpropagation](./gradient_descent_with_autograd_and_backpropagation.ipynb)
 
-This Jupyter Notebook (`Gradient Descent with Autograd and Backpropagation.ipynb`) provides a practical demonstration of training a simple linear regression model using gradient descent. It serves two main purposes:
+This Jupyter Notebook (`gradient_descent_with_autograd_and_backpropagation.ipynb`) provides a practical demonstration of training a simple linear regression model using gradient descent. It serves two main purposes:
 
 1.  Illustrates the complete process manually using **NumPy**, including:
     - Forward pass (prediction)
@@ -151,7 +151,7 @@ This Jupyter Notebook (`Gradient Descent with Autograd and Backpropagation.ipynb
     - Weight update step
 2.  Replicates the same process using **PyTorch**, highlighting the power of **Autograd** for automatic gradient calculation (backpropagation).
 
-This notebook effectively contrasts the manual approach with PyTorch's automated capabilities, building upon concepts from `Tensor Basics.ipynb`, `Gradient Calculation With Autograd.ipynb`, and `Backpropagation.ipynb`.
+This notebook effectively contrasts the manual approach with PyTorch's automated capabilities, building upon concepts from `tensor_basics.ipynb`, `gradient_calculation_with_autograd.ipynb`, and `backpropagation.ipynb`.
 
 ## Key Concepts Covered:
 
@@ -174,20 +174,20 @@ This notebook effectively contrasts the manual approach with PyTorch's automated
 ## How to Use:
 
 1.  Ensure you have PyTorch and NumPy installed (`pip install torch numpy`).
-2.  Open `Gradient Descent with Autograd and Backpropagation.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
+2.  Open `gradient_descent_with_autograd_and_backpropagation.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
 3.  Run the cells sequentially. First, observe the manual NumPy implementation, then see how the same result is achieved more easily with PyTorch and Autograd.
 
 This notebook provides a concrete example of a basic machine learning training loop and clearly demonstrates the practical advantage of using automatic differentiation frameworks like PyTorch.
 
-# PyTorch Tutorial: [Training Pipeline - Model, Loss, and Optimizer](./Training%20Pipeline%20-%20Model,%20Loss,%20and%20Optimizer.ipynb)
+# PyTorch Tutorial: [Training Pipeline - Model, Loss, and Optimizer](./training_pipeline_model_loss_and_ptimizer.ipynb)
 
-This Jupyter Notebook (`Training Pipeline - Model, Loss, and Optimizer.ipynb`) demonstrates the standard PyTorch training pipeline by building and training a simple linear regression model. It introduces key PyTorch components for streamlining the model training process:
+This Jupyter Notebook (`training_pipeline_model_loss_and_ptimizer.ipynb`) demonstrates the standard PyTorch training pipeline by building and training a simple linear regression model. It introduces key PyTorch components for streamlining the model training process:
 
 1.  **`torch.nn.Module`**: For defining model architectures.
 2.  **`torch.nn.Loss`**: For defining loss functions (e.g., `nn.MSELoss`).
 3.  **`torch.optim`**: For defining optimization algorithms (e.g., `SGD`, `Adam`).
 
-This notebook builds upon the concepts from previous tutorials, particularly `Gradient Descent with Autograd and Backpropagation.ipynb`, showing how PyTorch's higher-level abstractions simplify the training loop.
+This notebook builds upon the concepts from previous tutorials, particularly `gradient_descent_with_autograd_and_backpropagation.ipynb`, showing how PyTorch's higher-level abstractions simplify the training loop.
 
 ## Key Concepts Covered:
 
@@ -209,7 +209,7 @@ This notebook builds upon the concepts from previous tutorials, particularly `Gr
 ## How to Use:
 
 1.  Ensure you have PyTorch installed (`pip install torch`).
-2.  Open `Training Pipeline - Model, Loss, and Optimizer.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
+2.  Open `training_pipeline_model_loss_and_ptimizer.ipynb` in a Jupyter environment (like Jupyter Lab or VS Code with the Python extension).
 3.  Run the cells sequentially. Pay attention to:
     - The initial example using a single weight tensor `w` with `nn.MSELoss` and `torch.optim.SGD`.
     - The transition to using `nn.Linear` for the model definition.
