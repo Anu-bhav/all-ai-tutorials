@@ -2,9 +2,7 @@
 
 Tutorial is based on this youtube playlist [PyTorch Tutorials - Complete Beginner](https://www.youtube.com/playlist?list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4)
 
-1. Basics
-
-# PyTorch Tutorial: [Tensor Basics](Tensor Basics.ipynb)
+# PyTorch Tutorial: 1. [Tensor Basics](./Tensor%20Basics.ipynb)
 
 This Jupyter Notebook (`Tensor Basics.ipynb`) serves as an introduction to the fundamental building block of PyTorch: the **Tensor**. It covers the creation, manipulation, and basic operations associated with PyTorch tensors.
 
